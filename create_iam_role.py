@@ -70,17 +70,33 @@ def create_runtime_policy(account_id):
                 "Resource": "*"
             },
             {
-                "Sid": "LogsAccess",
+                "Sid": "LogsDescribeLogGroups",
+                "Effect": "Allow",
+                "Action": [
+                    "logs:DescribeLogGroups"
+                ],
+                "Resource": "*"
+            },
+            {
+                "Sid": "LogsGroupLevel",
                 "Effect": "Allow",
                 "Action": [
                     "logs:CreateLogGroup",
-                    "logs:CreateLogStream",
-                    "logs:PutLogEvents",
-                    "logs:DescribeLogGroups",
                     "logs:DescribeLogStreams"
                 ],
                 "Resource": [
                     f"arn:aws:logs:us-west-2:{account_id}:log-group:/aws/bedrock-agentcore/runtimes/*"
+                ]
+            },
+            {
+                "Sid": "LogsStreamLevel",
+                "Effect": "Allow",
+                "Action": [
+                    "logs:CreateLogStream",
+                    "logs:PutLogEvents"
+                ],
+                "Resource": [
+                    f"arn:aws:logs:us-west-2:{account_id}:log-group:/aws/bedrock-agentcore/runtimes/*:log-stream:*"
                 ]
             },
             {
@@ -200,4 +216,5 @@ def create_iam_role():
         raise
 
 if __name__ == "__main__":
+    role_arn = create_iam_role()
     role_arn = create_iam_role()
