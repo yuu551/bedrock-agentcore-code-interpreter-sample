@@ -73,10 +73,3 @@ agent_arn = "arn:aws:bedrock-agentcore:us-west-2:123456789012:agent-runtime/code
 # テスト
 python test_invoke.py
 ```
-
-## 前提条件
-
-- AWS CLI設定済み
-- Python 3.1以上
-- us-west-2リージョンでのCode Interpreter利用権限
-- anthropic.claude-3-5-sonnet-20241022-v2:0へのアクセス権限
