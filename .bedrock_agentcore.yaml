@@ -1,0 +1,58 @@
+default_agent: code_interpreter_agent_2
+agents:
+  code_interpreter_agent:
+    name: code_interpreter_agent
+    entrypoint: agent.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::<YOUR_ACCOUNT_ID>:role/CodeInterpreterRuntimeRole-REPLACE_ME
+      execution_role_auto_create: false
+      account: <YOUR_ACCOUNT_ID>
+      region: us-west-2
+      ecr_repository: null
+      ecr_auto_create: false
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: null
+      agent_arn: null
+      agent_session_id: null
+    codebuild:
+      project_name: null
+      execution_role: null
+      source_bucket: null
+    authorizer_configuration: null
+    oauth_configuration: null
+  code_interpreter_agent_2:
+    name: code_interpreter_agent_2
+    entrypoint: agent.py
+    platform: linux/arm64
+    container_runtime: none
+    aws:
+      execution_role: arn:aws:iam::<YOUR_ACCOUNT_ID>:role/CodeInterpreterRuntimeRole-REPLACE_ME
+      execution_role_auto_create: false
+      account: <YOUR_ACCOUNT_ID>
+      region: us-west-2
+      ecr_repository: null
+      ecr_auto_create: true
+      network_configuration:
+        network_mode: PUBLIC
+      protocol_configuration:
+        server_protocol: HTTP
+      observability:
+        enabled: true
+    bedrock_agentcore:
+      agent_id: null
+      agent_arn: null
+      agent_session_id: null
+    codebuild:
+      project_name: null
+      execution_role: null
+      source_bucket: null
+    authorizer_configuration: null
+    oauth_configuration: null

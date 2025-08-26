@@ -1,0 +1,29 @@
+# Python
+__pycache__/
+*.py[cod]
+*.class
+
+# Virtual envs
+.env
+.venv/
+venv/
+env/
+agentcore-env/
+
+# IDE/editor
+.vscode/
+.idea/
+.DS_Store
+
+# Build/coverage
+build/
+dist/
+*.egg-info/
+.pytest_cache/
+.coverage*
+htmlcov/
+
+# Local/tool-specific
+.claude/
+.bedrock_agentcore.yaml.local
+.mcp.json
