@@ -217,4 +217,3 @@ def create_iam_role():
 
 if __name__ == "__main__":
     role_arn = create_iam_role()
-    role_arn = create_iam_role()
